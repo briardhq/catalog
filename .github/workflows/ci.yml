@@ -1,0 +1,23 @@
+# Every push and pull request: the catalog as it stands here, checked by briard `main`'s
+# catalog test -- every version file parses as a node parses it, the list names its files by
+# their exact bytes, and each app's current version agrees with briard's code for that app.
+# briard `main` and not a pinned briard, because that is the code about to ship with these
+# entries. The VM tests that boot the apps need KVM and run on the maintainers' hardware.
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  catalog-test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v5
+      - uses: cachix/install-nix-action@v27
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+      - name: briard's catalog test, over this checkout
+        run: nix build --print-build-logs github:briardhq/briard#catalog-test --override-input catalog "path:$PWD"
