@@ -149,3 +149,14 @@ of it: for Home Assistant that includes booting under the token wrapper (briard'
 because an image whose s6 furniture moved would otherwise become a fleet incident rather than a
 failed promotion. Publishing uploads the new version files first, then `latest.json` and its
 signature; what was published is brought back here.
+
+## Where a new version comes from: `catalog-upstream.json`
+
+The nightly catalog run looks for each app's newest release in the image repository its current
+version pulls from, by tag. An app's release `X.Y.Z` is the tag `X.Y.Z` unless
+`catalog-upstream.json` gives the app a template: Home Assistant tags its releases bare, while
+mosquitto's official image publishes `X.Y.Z-alpine` and Files `X.Y.Z-stable`. Pre-releases and
+moving tags (`latest`, `stable`, `2026.11`, `-beta`) never match a template, so they are never
+proposed. A candidate is proposed with its VM tests, its upgrade from the previous version, an
+audit of its image and a fresh install on a stock Ubuntu machine behind it, and published only
+once the owner merges it in the signing repository.

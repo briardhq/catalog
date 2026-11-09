@@ -1,0 +1,4 @@
+{
+  "mosquitto": { "tag": "{version}-alpine" },
+  "files": { "tag": "{version}-stable" }
+}
