@@ -29,7 +29,8 @@ installs one unasked. Apps not yet installable are listed for households to ask 
 
 A nightly run finds each app's newest upstream release, tests it (its VM tests, the upgrade from the
 previous version, an audit of its image, a fresh install on stock Ubuntu) and proposes it; it is
-published once the owner merges it in [briardhq/signing](https://github.com/briardhq/signing).
+published once the owner merges it in [briardhq/signing](https://github.com/briardhq/signing),
+and publishing brings the version file, its line and its image's hash here.
 A hand edit to an installable app's line is proposed the same way. Any other list change (a line
 removed, or a not-yet-installable app's line edited) goes to briardhq/signing as a pull request by
 hand, with the same edit committed here.
@@ -53,5 +54,6 @@ needs beyond what a manifest can express is product code in briard, keyed on the
 nix build github:briardhq/briard#catalog-test --override-input catalog path:.
 ```
 
-parses every file the way a node does and holds each app to what briard's code for it assumes. CI
-runs it on every push.
+parses every file the way a node does, holds each app to what briard's code for it assumes, and
+refuses a version whose image has no hash in `catalog-images.json` (build an app's VM test with the
+hash missing and nix prints the one to add). CI runs it on every push.
