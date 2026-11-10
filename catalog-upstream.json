@@ -1,4 +1,5 @@
 {
   "mosquitto": { "tag": "{version}-alpine" },
-  "files": { "tag": "{version}-stable" }
+  "files": { "tag": "{version}-stable" },
+  "mealie": { "tag": "v{version}" }
 }
