@@ -30,7 +30,9 @@ installs one unasked. Apps not yet installable are listed for households to ask 
 A nightly run finds each app's newest upstream release, tests it (its VM tests, the upgrade from the
 previous version, an audit of its image, a fresh install on stock Ubuntu) and proposes it; it is
 published once the owner merges it in [briardhq/signing](https://github.com/briardhq/signing).
-A hand edit committed here (a new app, a description) is proposed the same way.
+A hand edit to an installable app's line is proposed the same way. Any other list change (a line
+removed, or a not-yet-installable app's line edited) goes to briardhq/signing as a pull request by
+hand, with the same edit committed here.
 
 ## Adding an app
 
