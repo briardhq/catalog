@@ -1,0 +1,1 @@
+{"name":"mealie","version":"3.31.0","network":"private","containers":[{"name":"app","image":"ghcr.io/mealie-recipes/mealie@sha256:97e21ac96e9a8d1ee15aaf558ba3f14998936b9d6f334e40ebb4c6c2127dc12f","mounts":[{"tier":"data","dir":"app","path":"/app/data"}],"primary":true,"port":9000,"healthPath":"/api/app/about"}],"size":381903563,"installedSize":1077635072,"minMemoryMB":220}
