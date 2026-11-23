@@ -2,7 +2,11 @@
 
 The catalog's own files are Apache-2.0 ([LICENSE](LICENSE)); the app icons in it are other people's,
 under their own terms. The apps themselves are not here: a version file names its images by
-digest, and a node pulls them from their publishers.
+digest, and a node pulls them from their publishers. One image is published from here:
+`ghcr.io/briardhq/catalog/samba`, which serves Files' drive. It is Samba (GPL-3.0), built by
+briard's recipe; briard's
+[THIRD-PARTY.md](https://github.com/briardhq/briard/blob/main/THIRD-PARTY.md) says how to get the
+source each image was built from.
 
 ## The catalog's app icons — Apache-2.0 collection, each mark its project's
 

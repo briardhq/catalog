@@ -7,7 +7,8 @@ at `https://get.briard.io/catalog/`, signed; this repository is where it is edit
 catalog/<app>/<version>.json   one version of one app, kept for good
 catalog/main.json              the list as it stands here: each app's newest version, by the SHA-256 of its file
 catalog/latest.json            the published list, copied here when it is published; never edited by hand
-catalog-upstream.json          the upstream tag of an app's release, where it is not the bare X.Y.Z
+catalog-upstream.json          the upstream tag of an app's release, where it is not the bare X.Y.Z;
+                               and which containers run an image built here, not an upstream's
 catalog-images.json            the hash nix checks each pulled image against (tests only)
 ```
 
@@ -44,6 +45,14 @@ node below it is told to update Briard first, so such a version is proposed only
 release carries that Briard, and waits here until then. Any other list change (a line removed, or a
 not-yet-installable app's line edited) goes to briardhq/signing as a pull request by hand, with
 the same edit committed here.
+
+**A version names one part per container**, in their order, joined by `-`. Most apps run one
+container and their version is its upstream's. Files runs two: `2.0.2-4.25.1` is Files 2.0.2 with
+Samba 4.25.1, the image its drive is served by. That image is the one this catalog does not pull
+from an upstream: briard's recipe (`catalog/samba-image.nix`) builds it against the head of the
+nixpkgs channel briard follows, and the nightly run builds and publishes a new one to
+`ghcr.io/briardhq/catalog/samba` when Samba's version there moves. A rebuild made by hand for a
+fix in a library under an unchanged Samba adds a fourth number (`2.0.2-4.25.1.1`).
 
 ## Adding an app
 
