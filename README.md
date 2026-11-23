@@ -5,7 +5,8 @@ at `https://get.briard.io/catalog/`, signed; this repository is where it is edit
 
 ```
 catalog/<app>/<version>.json   one version of one app, kept for good
-catalog/latest.json            the list: each app's current version, by the SHA-256 of its file
+catalog/main.json              the list as it stands here: each app's newest version, by the SHA-256 of its file
+catalog/latest.json            the published list, copied here when it is published; never edited by hand
 catalog-upstream.json          the upstream tag of an app's release, where it is not the bare X.Y.Z
 catalog-images.json            the hash nix checks each pulled image against (tests only)
 ```
@@ -27,13 +28,22 @@ installs one unasked. Apps not yet installable are listed for households to ask 
 
 ## New versions
 
-A nightly run finds each app's newest upstream release, tests it (its VM tests, the upgrade from the
-previous version, an audit of its image, a fresh install on stock Ubuntu) and proposes it; it is
-published once the owner merges it in [briardhq/signing](https://github.com/briardhq/signing),
-and publishing brings the version file, its line and its image's hash here.
-A hand edit to an installable app's line is proposed the same way. Any other list change (a line
-removed, or a not-yet-installable app's line edited) goes to briardhq/signing as a pull request by
-hand, with the same edit committed here.
+`main.json` is what is edited and what the tests run; `latest.json` is what nodes are served. The
+two agree except where something here is ahead of what is published.
+
+A nightly run finds the newest upstream release of each published app, tests it (its VM tests, the
+upgrade from the published version, an audit of its image, a fresh install on stock Ubuntu) and
+proposes it; it is published once the owner merges it in
+[briardhq/signing](https://github.com/briardhq/signing), and publishing brings the version file,
+the published list, its image's hash and the version's line in `main.json` here.
+
+Nothing publishes `main.json` on its own. An installable app's line that differs from the published
+one (a new version written by hand, an edited line) is put through the same tests and proposed when
+a maintainer asks for it. A version may name the oldest Briard that can run it (`minBriard`); a
+node below it is told to update Briard first, so such a version is proposed only once the stable
+release carries that Briard, and waits here until then. Any other list change (a line removed, or a
+not-yet-installable app's line edited) goes to briardhq/signing as a pull request by hand, with
+the same edit committed here.
 
 ## Adding an app
 
