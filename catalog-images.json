@@ -9,5 +9,6 @@
   "ghcr.io/mealie-recipes/mealie@sha256:97e21ac96e9a8d1ee15aaf558ba3f14998936b9d6f334e40ebb4c6c2127dc12f": { "amd64": "sha256-ChQaqLA5R5P1GX7wSAeKq5/d5NTrIa7MIyjqCsw1SAU=" },
   "ghcr.io/home-assistant/home-assistant@sha256:493a07e8f6530fc640223f4a0a5248f20a61ca2f718bb1d31efbf08a2c5ea28f": { "amd64": "sha256-nbzk4GAvu3fxlwOIeOX1yAxebiMFSAB6I0j6LgAiBHk=" },
   "docker.io/library/eclipse-mosquitto@sha256:fa12172a051310efe5bcb7a6a11b77bd5faacb82cbacd7742aa758bf024fd8e4": { "amd64": "sha256-8PplAUyVOGmsvLV1JTWEfMei4T/fmPDVq4NwIiRbbCo=" },
-  "ghcr.io/briardhq/catalog/samba@sha256:47f6227ed886075284eb29f27173a0040d8648163d8a3e7fe29dd1346033f3d8": { "amd64": "sha256-lVClKpWtBVBKZ778Z2XwNYOq89ozvFvqQaeGR1IJEeI=" }
+  "ghcr.io/briardhq/catalog/samba@sha256:47f6227ed886075284eb29f27173a0040d8648163d8a3e7fe29dd1346033f3d8": { "amd64": "sha256-lVClKpWtBVBKZ778Z2XwNYOq89ozvFvqQaeGR1IJEeI=" },
+  "ghcr.io/home-assistant/home-assistant@sha256:24e541ddae5818bf8eb27898b9ba00d0c344a655aa5097e9e9bd4b19356be847": { "amd64": "sha256-unnVKu/6y2xdS2SNLggPAbTpnRxaUOekxODJj6tyBgY=" }
 }
