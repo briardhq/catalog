@@ -51,8 +51,9 @@ container and their version is its upstream's. Files runs two: `2.0.2-4.25.1` is
 Samba 4.25.1, the image its drive is served by. That image is the one this catalog does not pull
 from an upstream: briard's recipe (`catalog/samba-image.nix`) builds it against the head of the
 nixpkgs channel briard follows, and the nightly run builds and publishes a new one to
-`ghcr.io/briardhq/catalog/samba` when Samba's version there moves. A rebuild made by hand for a
-fix in a library under an unchanged Samba adds a fourth number (`2.0.2-4.25.1.1`).
+`ghcr.io/briardhq/catalog/samba` when Samba's version there moves. A change made by hand under
+unchanged upstreams adds a fourth number: a rebuild for a fix in a library under the same Samba,
+or how an entry runs (`2.1.0-4.25.1.1` sets Files' `GOMEMLIMIT`, which its next versions keep).
 
 ## Adding an app
 
