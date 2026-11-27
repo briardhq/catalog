@@ -13,5 +13,5 @@
   "ghcr.io/home-assistant/home-assistant@sha256:24e541ddae5818bf8eb27898b9ba00d0c344a655aa5097e9e9bd4b19356be847": { "amd64": "sha256-unnVKu/6y2xdS2SNLggPAbTpnRxaUOekxODJj6tyBgY=" },
   "docker.io/gtstef/filebrowser@sha256:17de8d0ac6a6bcfd5ef9aca43d6c0aa2fd031a07d6ee9b8a3b7c6c646efe35bf": { "amd64": "sha256-Mhm/Y2ozmS2DiZvVXVkNW3Vsj3/QUjwyfkT2+AvHcTw=" },
   "ghcr.io/navidrome/navidrome@sha256:38dc2727bfcfd5ede290f8ada114fc90368146f265ae4701ddddbcbe2a44ee52": { "amd64": "sha256-IXREQqkkZVo3wK1a9nAmaMx0AMRrSd2ZyFVsuoRQNRE=" },
-  "docker.io/freshrss/freshrss@sha256:4b84a2468250cd947631d882b3e7b42612df73828b6a227a2232161e41ad06aa": { "amd64": "sha256-/MWtDGBWng37Gu/zZRNaSvhHRjzdW9uEmi9U6PS4GJE=" }
+  "docker.io/freshrss/freshrss@sha256:2cf8cb46b968cd39f0690938c66c3bf6604404b5125904a35d439c68c006991e": { "amd64": "sha256-/MWtDGBWng37Gu/zZRNaSvhHRjzdW9uEmi9U6PS4GJE=" }
 }
